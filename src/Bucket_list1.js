@@ -26,7 +26,7 @@ return (
 const ListStyle = styled.div`
 display: flex;
 flex-direction: column;
-height: 100%;
+height: 99%;
 overflow-x: hidden;
 overflow-y: auto;
 `;
