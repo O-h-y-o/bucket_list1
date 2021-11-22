@@ -1,40 +1,44 @@
 // 리액트 패키지를 불러옵니다.
 import React from "react";
 import styled from "styled-components";
-import {useHistory} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const BucketList1 = (props) => {
-console.log(props);
-const my_lists = props.list;
-const history = useHistory();
+  console.log(props);
+  const my_lists = props.list;
+  const history = useHistory();
 
-return (
-<ListStyle>
-{my_lists.map((list, index) => {
-return (
-<ItemStyle className="list_item" key={index} onClick={() => {
-  history.push("/detail");
-}}>
-{list}
-</ItemStyle>
-);
-})}
-</ListStyle>
-);
+  return (
+    <ListStyle>
+      {my_lists.map((list, index) => {
+        return (
+          <ItemStyle
+            className="list_item"
+            key={index}
+            onClick={() => {
+              history.push("/detail");
+            }}
+          >
+            {list}
+          </ItemStyle>
+        );
+      })}
+    </ListStyle>
+  );
 };
 
 const ListStyle = styled.div`
-display: flex;
-flex-direction: column;
-height: 99%;
-overflow-x: hidden;
-overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 97%;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const ItemStyle = styled.div`
-padding: 16px;
-margin: 8px;
-background-color: aliceblue;
+  padding: 16px;
+  margin: 8px;
+  background-color: aliceblue;
 `;
 
 export default BucketList1;
