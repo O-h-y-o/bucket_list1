@@ -1,15 +1,19 @@
 // 리액트 패키지를 불러옵니다.
 import React from "react";
 import styled from "styled-components";
+
 import { useHistory } from "react-router-dom";
+// redux 훅 중, useSelector를 가져옵니다.
 import { useSelector } from "react-redux";
 
-const BucketList1 = (props) => {
-  console.log(props);
+const BucketList = (props) => {
+  let history = useHistory();
+  // 이 부분은 주석처리!
+  // console.log(props);
   // const my_lists = props.list;
-  const history = useHistory();
+  // 여기에서 state는 리덕스 스토어가 가진 전체 데이터예요.
+  // 우리는 그 중, bucket 안에 들어있는 list를 가져옵니다.
   const my_lists = useSelector((state) => state.bucket.list);
-
   return (
     <ListStyle>
       {my_lists.map((list, index) => {
@@ -18,7 +22,7 @@ const BucketList1 = (props) => {
             className="list_item"
             key={index}
             onClick={() => {
-              history.push("/detail");
+              history.push("/detail/" + index);
             }}
           >
             {list}
@@ -32,7 +36,7 @@ const BucketList1 = (props) => {
 const ListStyle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 97%;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 `;
@@ -43,4 +47,4 @@ const ItemStyle = styled.div`
   background-color: aliceblue;
 `;
 
-export default BucketList1;
+export default BucketList;
