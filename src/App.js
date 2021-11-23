@@ -43,7 +43,7 @@ render={(props) => <BucketList list={list} />}
       {/* 인풋박스와 추가하기 버튼을 넣어줬어요. */}
       <Input>
         <input type="text" ref={text} />
-        <button onClick={addBucketList}>추가하기</button>
+        <button onClick={addBucketList}>추가하기 </button>
       </Input>
     </div>
   );
