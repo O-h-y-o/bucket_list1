@@ -6,15 +6,18 @@ import { Route, Switch } from "react-router-dom";
 import BucketList1 from "./Bucket_list1";
 import Detail from "./Detail";
 import NotFound from "./NotFound";
+import { useDispatch } from "react-redux";
 
 function App() {
   const [list, setList] = React.useState([
-    "영화관 가기",
-    "매일 책읽기",
-    "수영 배우기",
-    "코딩하자",
+    // "영화관 가기",
+    // "매일 책읽기",
+    // "수영 배우기",
+    // "코딩하자",
   ]);
   const text = React.useRef(null);
+
+  const dispatch = useDispatch();
 
   const addBucketList = () => {
     // 스프레드 문법! 기억하고 계신가요? :)
