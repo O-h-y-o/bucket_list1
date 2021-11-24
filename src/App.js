@@ -1,20 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
-// useDispatch를 가져와요!
+
 import { useDispatch } from "react-redux";
-// 액션생성함수도 가져오고요!
 import { createBucket } from "./redux/modules/bucket";
 
-// BucketList 컴포넌트를 import 해옵니다.
-// import [컴포넌트 명] from [컴포넌트가 있는 파일경로];
 import BucketList from "./BucketList";
 import Detail from "./Detail";
 import NotFound from "./NotFound";
 
 function App() {
   const text = React.useRef(null);
-  // useHistory 사용하는 것과 비슷하죠? :)
   const dispatch = useDispatch();
 
   const addBucketList = () => {
